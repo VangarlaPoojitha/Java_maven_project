@@ -14,6 +14,18 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
+      # ✅ DEBUG STEP (TEMPORARY)
+      - name: Debug Maven project structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Repository root:"
+          ls
+          echo "Contents of my-project:"
+          ls my-project || true
+          echo "Searching for pom.xml:"
+          find . -name pom.xml
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
