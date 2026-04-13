@@ -20,6 +20,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: maven
+          cache-dependency-path: my-project/pom.xml
 
       - name: Build and test with Maven
         working-directory: my-project
