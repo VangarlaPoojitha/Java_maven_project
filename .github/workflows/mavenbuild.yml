@@ -1,4 +1,4 @@
-name: Maven CI (Simple)
+name: Gradle CI
 
 on:
   push:
@@ -20,6 +20,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Build and test with Maven
+      - name: Grant execute permission for Gradle wrapper
         working-directory: my-project
-        run: mvn clean verify
+        run: chmod +x gradlew
+
+      - name: Build and test with Gradle
+        working-directory: my-project
+        run: ./gradlew build
